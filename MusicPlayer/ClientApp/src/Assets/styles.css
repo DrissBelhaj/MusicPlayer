@@ -1,0 +1,111 @@
+body {
+  background-color: #333;
+  color: #999;
+  min-width:320px;
+}
+.row {
+  background-color: #111;
+}
+ /* List */ 
+.table {
+  color: #999;
+}
+
+tbody tr:hover {
+  background-color: #333;
+  color:#ccc;
+}
+
+.list{
+  height: 70%;
+}
+
+ /* Nav */ 
+a {
+  color: white;
+  text-decoration:none;
+}
+a:hover {
+  color: white;
+  opacity:0.8;
+  text-decoration:none;
+}
+.navBtn{
+  margin:auto 0;
+  padding: 2vw 1vw;
+}
+.toolbar {
+  background-color:#010101;
+  padding:0 2vw;
+}
+
+/* Player and Infos */
+.Player {
+   height: 30%;
+  background-color:#151515;
+  margin:0;
+}
+.mpRangeM{
+  width:98%;
+  min-width:240px;
+  padding-top:1vh;
+}
+.Player img {
+    height: auto; 
+    width: 15vw; 
+    min-width: 100px; 
+    object-fit: contain;
+    max-width: 150px; 
+    max-height: 100px;
+}
+.Player .infos{
+    margin:0;
+  margin-left:-2vw;
+  padding-top:2vh;
+}
+.Player .controls {
+height:50%;
+  display: flex;
+align-items: center;
+ padding-right:0;
+  padding-left:0;
+}
+.Player .controls i{
+  padding:1.5vw;
+}
+.Player  .options{
+  height:50%;
+  display: flex;
+align-items: center;
+  direction:rtl;
+}
+.Player  .options i{
+  margin-right:3vw;
+}
+.Player i:hover{
+  color:#ddd;
+}
+/* Mobile */
+@media (max-width: 576px){
+  .list{
+  height: 60%;
+}
+  .toolbar {
+   height: 10%;
+    margin:0px auto;
+    display:flex;
+    justify-content:space-between;
+    padding:1em;
+}
+  .toolbar div{
+    display: inline !important;
+    width:auto;
+  }
+  .navBtn{
+  margin: 0;
+  padding: 0;
+}
+  .mpRangeM{
+  width:75vw;
+  }
+}
