@@ -1,0 +1,48 @@
+
+import React from "react";
+import { useEffect, useState } from "react";
+type SongType = {
+    song: Array<Song>
+}
+class Song {
+    id!: number;
+    title!: String;
+    author!: string;
+    songId!: boolean;
+
+}
+const App = () => {
+    const [song, setSong] = useState<Array<Song>>([]);
+    useEffect(() => {
+        fetch("/song/")
+            .then(response => { return response.json() })
+            .then(responseJson => {
+                setSong(responseJson)
+            })
+    }, [])
+    return (<div className="container">
+        <div className="row">
+            <div className="col-sm-12">
+                <table className="table table-striped">
+                    <thead>
+                        <tr><th>Id</th><th>Title</th><th>Author</th><th>SongId</th></tr>
+                    </thead>
+                    <tbody>
+                        {
+                            song.map((item) => (
+                                <tr key="{item.Id}">
+
+                                    <td>{item.id}</td>
+                                    <td>{item.title}</td>
+                                    <td>{item.author}</td>
+                                    <td>{item.songId}</td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>)
+}
+export default App;
