@@ -6,7 +6,8 @@ body {
 .row {
   background-color: #111;
 }
- /* List */ 
+
+ /* Page List */ 
 .table {
   color: #999;
 }
@@ -16,9 +17,20 @@ tbody tr:hover {
   color:#ccc;
 }
 
-.list{
+.context{
   height: 70%;
 }
+tr td:last-child{
+  opacity: 0;
+  font-size: 0em;
+  min-width: 50px;
+}
+tr:hover td:last-child{
+  opacity: 1;
+  font-size: 1.5em;
+  padding: 0;
+}
+
 
  /* Nav */ 
 a {
@@ -85,27 +97,119 @@ align-items: center;
 .Player i:hover{
   color:#ddd;
 }
+
+/* Page - ALBUMS / Artist */
+.cardContainer{
+  width: 15vw;
+}
+.card-body{
+  padding: 2px;
+}
+.card-title{
+  margin: 5px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.card{
+  background-color:#01010100;
+}
+.card:hover{
+  color: #ccc;
+}
+#Albums .card img{
+  border-radius: .25rem;
+}
+
+#Artists .card img{
+  border-radius: 50%;
+}
+
 /* Mobile */
 @media (max-width: 576px){
-  .list{
+  .context{
   height: 60%;
-}
+  }
+  #Album .cardContainer{
+    width: 25vw;
+  }
+  #Artist .cardContainer {
+    width: 33vw;
+  }
   .toolbar {
    height: 10%;
     margin:0px auto;
     display:flex;
     justify-content:space-between;
     padding:1em;
-}
-  .toolbar div{
+  }
+  .navbar{
     display: inline !important;
     width:auto;
   }
   .navBtn{
   margin: 0;
   padding: 0;
-}
+  }
   .mpRangeM{
   width:75vw;
   }
 }
+
+
+/*MODAL STYLING*/
+
+.modal-content{
+  background-color:#010101!important;
+  border-top: 1px solid rgba(255,255,255,0.8);
+  border-left: 1px solid rgba(255,255,255,0.8);
+  border-right: 2px solid rgba(255,255,255,0.2);
+  border-bottom: 2px solid rgba(255,255,255,0.2);
+  box-shadow: 0px 0px 1px 0px #555;
+}
+#mp3{
+background-color:#010101!important;
+}
+input{
+background-color:#010101!important;
+border-color: #999!important;
+color: #999!important;
+}
+
+input:focus{
+outline: 0;
+box-shadow: 0 0 0 .05rem #ddd!important;
+}
+
+.custom-file-upload img{
+  padding:0 0.1vw;
+  margin:0 5px 0 0;
+  border-radius: .25rem;
+  width:15%;
+  }
+.custom-file-upload input{
+  width:83%;
+  display:inline;
+  }
+.form-control::file-selector-button{
+  color: #fff;
+background-color: #6c757d;
+border-color: #6c757d;
+  position :relative;
+  left:83%;
+  margin-inline-end: -23%;
+}
+.form-control:hover:not(:disabled):not([readonly])::file-selector-button{
+color: #fff;
+background-color: #5c636a;
+border-color: #565e64;
+}
+.form-control:focus{
+color: #fff;
+background-color: #5c636a;
+border-color: #565e64;
+box-shadow: 0 0 0 .25rem rgba(130,138,145,.5)!important;
+  }
+
+
+ 
