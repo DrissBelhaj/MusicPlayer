@@ -89,12 +89,12 @@
             console.error(error);
           }); 
           setMusicInfo((prevState) => ({...prevState,
-          title: tags?.title || prevState.title,
-          artist: tags?.artist || prevState.artist,
-          album: tags?.album || prevState.album,
-          year: tags?.year || prevState.releaseYear,
-          genre:tags?.genre|| prevState.genre,
-          duration:tags?.duration|| prevState.duration,
+          title:  tags?.title.toString().replaceAll("\u0000","")  || prevState.title,
+          artist: tags?.artist.toString().replaceAll("\u0000","") || prevState.artist,
+          album:  tags?.album.toString().replaceAll("\u0000","")  || prevState.album,
+          year:   tags?.year                                      || prevState.releaseYear,
+          genre:  tags?.genre.toString().replaceAll("\u0000","")  || prevState.genre,
+          duration:tags?.duration                                 || prevState.duration,
           imgSrc: blob}));
           setRefreshKey(prevKey => prevKey + 1);
       }
@@ -203,9 +203,7 @@
               <form ref={formRef} target="/" onSubmit={handleSubmit} >
                 <div className="modal-body">
                   <div className="mb-3 custom-file-upload">
-
                 <img src={`/Images/`+musicInfo.imgSrc+`?${refreshKey}`} alt="Album cover" />
-
                     <input type="file" className="form-control custom-file-input" id="mp3" accept=".mp3" name="mp3" onChange={handleFileUpload}/> {/* onChange={handleFileUpload} */}
                   </div>
                   <div className="mb-3">
