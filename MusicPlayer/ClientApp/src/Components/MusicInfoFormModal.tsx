@@ -21,9 +21,9 @@
     const [listMusicURL, setListMusicURL] = useContext(StateContext);
     const [refreshKey, setRefreshKey] = useState(0);
     const [musicInfo, setMusicInfo] = useState<MusicInfo>({
-      title: '',
-      artist: '',
-      album: '',
+      title: 'empty',
+      artist: 'unknown',
+      album: 'unknown',
       releaseYear: 2023,
       imgSrc: 'default.png',
       songSrc:'default.mp3',
@@ -89,11 +89,11 @@
             console.error(error);
           }); 
           setMusicInfo((prevState) => ({...prevState,
-          title:  tags?.title.toString().replaceAll("\u0000","")  || prevState.title,
-          artist: tags?.artist.toString().replaceAll("\u0000","") || prevState.artist,
-          album:  tags?.album.toString().replaceAll("\u0000","")  || prevState.album,
+          title:  tags?.title?.toString().replaceAll("\u0000","")  || prevState.title,
+          artist: tags?.artist?.toString().replaceAll("\u0000","") || prevState.artist,
+          album:  tags?.album?.toString().replaceAll("\u0000","")  || prevState.album,
           year:   tags?.year                                      || prevState.releaseYear,
-          genre:  tags?.genre.toString().replaceAll("\u0000","")  || prevState.genre,
+          genre:  tags?.genre?.toString().replaceAll("\u0000","")  || prevState.genre,
           duration:tags?.duration                                 || prevState.duration,
           imgSrc: blob}));
           setRefreshKey(prevKey => prevKey + 1);
@@ -141,11 +141,12 @@
         handleCloseModal();
         history.push('/');
         setListMusicURL(listMusicURL=="/song/"?'/song':'/song/');
+        //Clear Form
         setMusicInfo({
           title: '',
           artist: '',
           album: '',
-          releaseYear: 2000,
+          releaseYear: 2023,
           imgSrc: 'default.png',
           songSrc:'default.mp3',
           genre:'unknown',
