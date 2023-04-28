@@ -44,6 +44,10 @@ Frontend
 Or simply Run the application from visual studio by importing the .sln Project (Database migration and update is still required).
 
 //TODO Add docker installation
+Docker
+
+    Failed check Dockerize_Linux Branch.
+
 
 Usage
 
