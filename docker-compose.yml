@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  musicplayer:
+    image: ${DOCKER_REGISTRY-}musicplayer
+    build:
+      context: .
+      dockerfile: MusicPlayer/Dockerfile
