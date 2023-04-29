@@ -31,6 +31,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\public\Images\NewFolder\" />
+    <Folder Include="ClientApp\public\Sounds\" />
     <Folder Include="ClientApp\public\Sounds\" />
   </ItemGroup>
 
