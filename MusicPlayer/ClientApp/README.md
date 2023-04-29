@@ -1,1 +1,1 @@
-libraries : Howler,id3-parser
+libraries : Howler,id3js
